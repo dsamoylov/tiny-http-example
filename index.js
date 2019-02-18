@@ -1,4 +1,5 @@
 const http = require('http')
+const router = require('tiny-router')
 
 const responseObject = {
   id: 1,
@@ -11,14 +12,9 @@ const responseObject = {
   }
 }
 
-const requestListener = (req, res) => {
-  if (req.url === '/persons/') {
-    res.writeHead(200, { 'Content-Type': 'application/json' })
-    res.end(JSON.stringify(responseObject))
-  } else {
-    res.writeHead(404, { 'Content-Type': 'text/plain' })
-    res.end('NOT FOUND')
-  }
+const sendPersons = (req, res) => {
+  res.send(responseObject)
 }
 
-http.createServer(requestListener).listen(9615)
+router.get('/persons/', sendPersons)
+router.listen(9615)

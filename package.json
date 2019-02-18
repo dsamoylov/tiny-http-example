@@ -17,5 +17,8 @@
   "bugs": {
     "url": "https://github.com/dsamoylov/tiny-http-example/issues"
   },
-  "homepage": "https://github.com/dsamoylov/tiny-http-example#readme"
+  "homepage": "https://github.com/dsamoylov/tiny-http-example#readme",
+  "dependencies": {
+    "tiny-router": "^0.1.5"
+  }
 }
